@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Shipping Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #container {
+            display: flex;
+            flex: 1;
+        }
+
+        #sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #000814;
+            color: #fff;
+            padding: 20px;
+            padding-top: 60px;
+            overflow-y: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: fixed; /* Fixed positioning */
+        }
+
+        #sidebar img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #sidebar-heading {
+            font-size: 24px;
+            color: #c1121f;
+            margin-bottom: 10px;
+        }
+
+        #sidebar-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        #sidebar a {
+            display: block;
+            color: #fdf0d5;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: #555;
+        }
+
+        #sidebar i {
+            margin-right: 10px;
+        }
+
+        #content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin-left: 250px; /* Adjust the margin to match the sidebar width */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-person {
+            width: 45%;
+            margin-bottom: 40px;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .contact-person img {
+            max-width: 40%;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* Additional styles for the contact page */
+        .contact-person p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="sidebar">
+        <img src="/templates/th.jpeg" alt="Shipping Logo">
+        <div id="sidebar-heading">E-commerce Shipping Prediction</div>
+        <a href="/"><i class="fas fa-home"></i>Home</a>
+        <a href="about"><i class="fas fa-info-circle"></i>About</a>
+        <a href="predict"><i class="fas fa-chart-line"></i>Prediction</a>
+        <a href="contact"><i class="fas fa-envelope"></i>Contact</a>
+    </div>
+
+    <div id="content">
+        <h1>Contact Us</h1>
+        
+        <div class="contact-person">
+            <img src="/templates/img.jpeg" alt="Person 1">
+            <h2>AKSHAT GATTANI</h2>
+            <p>3rd Year student at VIT Vellore</p>
+            <p>B.Tech CSE</p>
+        </div>
+
+        <div class="contact-person">
+            <img src="/templates/varun.jpeg" alt="Person 2">
+            <h2>Raghvendra Varun</h2>
+            <p>3rd Year student at VIT Chennai</p>
+            <p>B.Tech ECM</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

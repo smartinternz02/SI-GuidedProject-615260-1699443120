@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow: hidden; /* Prevent body from showing scrollbars */
+        }
+
+        #container {
+            display: flex;
+            height: 100vh;
+        }
+
+        #sidebar {
+            width: 250px;
+            height: 100%;
+            background-color: #000814;
+            color: #fff;
+            padding: 20px;
+            overflow-y: auto;
+            text-align: center;
+            padding-top: 60px;
+            display: flex;
+            margin-right: 40px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: fixed; /* Fixed positioning */
+        }
+
+        #sidebar img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #sidebar-heading {
+            font-size: 24px;
+            color: #c1121f;
+            margin-bottom: 10px;
+        }
+
+        #sidebar-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        #sidebar a {
+            display: block;
+            color: #fdf0d5;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: #555;
+        }
+
+        #sidebar i {
+            margin-right: 10px;
+        }
+
+        #content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            margin-left: 325px; /* Adjust the margin to match the sidebar width */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #000814;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        input,
+        select {
+            width: 80%;
+            padding: 10px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            margin-right: 100px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        input::placeholder,
+        select::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #ans {
+            background: #45a049;
+            width: 75%;
+            border: 0;
+            border-radius: 16px;
+            margin: 20px 10 20px;
+            font-weight: bold;
+            color: #000814;
+            box-sizing: border-box;
+            font-size: 24px;
+            height: 40px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="sidebar">
+        <img src="/templates/th.jpeg" alt="Shipping Logo">
+        <div id="sidebar-heading">E-commerce Shipping Prediction</div>
+        <div id="sidebar-links">
+            <a href="/"><i class="fas fa-home"></i>Home</a>
+            <a href="about"><i class="fas fa-info-circle"></i>About</a>
+            <a href="predict"><i class="fas fa-chart-line"></i>Prediction</a>
+            <a href="contact"><i class="fas fa-envelope"></i>Contact</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <h1>Predictor</h1>
+        <form action="/predict" method="post">
+            <label for="warehouse_block">Warehouse Block:</label>
+            <select name="warehouse_block" required>
+                <option value="" disabled selected>Select warehouse block</option>
+                <option value="F">F</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+
+            <label for="mode_of_shipment">Mode of Shipment:</label>
+            <select name="mode_of_shipment" required>
+                <option value="" disabled selected>Select shipment mode</option>
+                <option value="Flight">Flight</option>
+                <option value="Ship">Ship</option>
+                <option value="Road">Road</option>
+            </select>
+
+            <label for="customer_care_calls">Customer Care Calls:</label>
+            <input type="number" name="customer_care_calls" required placeholder="Add customer care calls">
+
+            <label for="customer_rating">Customer Rating:</label>
+            <input type="number" name="customer_rating" required placeholder="Add customer rating">
+
+            <label for="cost_of_the_product">Cost of the Product:</label>
+            <input type="number" name="cost_of_the_product" required placeholder="Add cost of the product">
+
+            <label for="prior_purchases">Prior Purchases:</label>
+            <input type="number" name="prior_purchases" required placeholder="Add prior purchases">
+
+            <label for="product_importance">Product Importance:</label>
+            <input type="number" name="product_importance" required placeholder="Add product importance">
+
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="" disabled selected>Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="discount_offered">Discount Offered:</label>
+            <input type="number" name="discount_offered" required placeholder="Add discount offered">
+
+            <label for="weight_in_gms">Weight in Grams:</label>
+            <input type="number" name="weight_in_gms" required placeholder="Add weight in grams">
+
+            <button type="submit" onclick="prediction()">Predict Shipping</button>
+            <div id="ans" class="ans"><p>{{ans}}</p> </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

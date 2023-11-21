@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('/templates/background.jpeg');
+            background-size: auto;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        #container {
+            display: flex;
+            height: 100vh;
+            align-items: center; /* Center vertically */
+        }
+
+        #sidebar {
+            width: 250px;
+            background-color: #000814;
+            color: #fff;
+            padding: 20px;
+            overflow-y: auto;
+            text-align: center;
+            padding-top: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: fixed; /* Fixed positioning */
+            height: 100%;
+        }
+
+        #sidebar img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #sidebar-heading {
+            font-size: 24px;
+            color: #c1121f;
+            margin-bottom: 10px;
+        }
+
+        #sidebar-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        #sidebar a {
+            display: block;
+            color: #fdf0d5;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: #555;
+        }
+
+        #sidebar i {
+            margin-right: 10px;
+        }
+
+        #content {
+            padding: 20px;
+            overflow-y: auto;
+            box-sizing: border-box;
+            text-align: right; /* Center horizontally */
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 72px;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); /* Add text shadow */
+        }
+
+        #content p {
+            background-color: #000814; /* Background box for the paragraph */
+            padding: 15px;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="sidebar">
+        <img src="/templates/th.jpeg" alt="Shipping Logo">
+        <div id="sidebar-heading">E-commerce Shipping Prediction</div>
+        <a href="/"><i class="fas fa-home"></i>Home</a>
+        <a href="about"><i class="fas fa-info-circle"></i>About</a>
+        <a href="predict"><i class="fas fa-chart-line"></i>Prediction</a>
+        <a href="contact"><i class="fas fa-envelope"></i>Contact</a>
+    </div>
+
+    <div id="content">
+        <h1>Shipping Prediction</h1>
+        <p>Welcome to our e-commerce shipping prediction site. Explore and get accurate shipping estimates for your orders.</p>
+        <!-- Add more content as needed -->
+    </div>
+</div>
+
+</body>
+</html>
